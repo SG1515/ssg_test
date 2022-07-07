@@ -14,7 +14,7 @@ public class App {
             System.out.print("명령) ");
             String cmd = br.readLine().trim();
 
-            int n = 1;
+            int LastId = 0;
 
             //"종료"
             switch ( cmd ){
@@ -23,8 +23,12 @@ public class App {
                     String wise = br.readLine().trim();
                     System.out.print("작가 : ");
                     String writer = br.readLine().trim();
-                    System.out.println(n + "번 명언이 등록되었습니다.");
-                    n++;
+                    int num = ++LastId; //글 번호 증가
+
+                    WiseSaying wiseSaying = new WiseSaying(id, wise, writer); //클
+                    System.out.println(wiseSaying);
+
+                    System.out.println(num + "번 명언이 등록되었습니다.");
                     break;
                 case "종료":
                     break outer;
@@ -37,3 +41,4 @@ public class App {
 
     }
 }
+
