@@ -27,7 +27,7 @@ public class App {
                     String writer = br.readLine().trim();
                     int num = ++LastId; //글 번호 증가
 
-                    WiseSaying wiseSaying = new WiseSaying(num, wise, writer); //클
+                    WiseSaying wiseSaying = new WiseSaying(num, wise, writer); //클래스로 만들기
                     System.out.println(wiseSaying);
                     System.out.println(num + "번 명언이 등록되었습니다.");
                     break;
