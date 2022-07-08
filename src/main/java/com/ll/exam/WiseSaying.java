@@ -2,9 +2,9 @@ package com.ll.exam;
 
 public class WiseSaying {
 
-    private int num;
-    private String wise;
-    private String writer;
+     int num;
+     String wise;
+     String writer;
 
     public WiseSaying(int num, String wise, String writer) {
         this.num = num;
