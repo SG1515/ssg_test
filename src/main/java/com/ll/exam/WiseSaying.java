@@ -2,18 +2,18 @@ package com.ll.exam;
 
 public class WiseSaying {
 
-     int num;
-     String wise;
-     String writer;
+     int id;
+     String content;
+     String author;
 
-    public WiseSaying(int num, String wise, String writer) {
-        this.num = num;
-        this.wise = wise;
-        this.writer = writer;
+    public WiseSaying(int id, String content, String author) {
+        this.id = id;
+        this.content = content;
+        this.author = author;
     }
 
     @Override
     public String toString() {
-        return  num +  "/ " + wise  + " / " + writer;
+        return  id +  "/ " + content  + " / " + author;
     }
 }
