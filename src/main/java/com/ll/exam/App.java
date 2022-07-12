@@ -11,6 +11,8 @@ public class App {
         System.out.println("=== 명언 SSG ==");
         BufferedReader br = new BufferedReader(new InputStreamReader(System.in));
 
+        // 가장 마지막 명언글의 번호
+        List<WiseSaying> wiseSayings = new ArrayList<>();
         int LastId = 0;
 
         outer:
@@ -18,7 +20,6 @@ public class App {
             System.out.print("명령) ");
             String cmd = br.readLine().trim();
 
-            List<WiseSaying> wiseSayings = new ArrayList<>();
 
             //"종료"
             switch ( cmd ){
@@ -50,7 +51,7 @@ public class App {
             }
         }
 
-        br.close();;
+        br.close();
 
     }
 }
