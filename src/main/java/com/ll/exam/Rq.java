@@ -24,4 +24,10 @@ public class Rq {
 
         return defaultValue;
     }
+
+    public String getPath() { //실패할 경우
+        String[] urlBits = url.split("\\?", 2);
+
+        return urlBits[0];
+    }
 }
