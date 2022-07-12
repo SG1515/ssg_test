@@ -1,23 +1,30 @@
 package com.ll.exam;
-
+// http://www.naver.com/abc/ddd/fff?age=10%id=40
+// ?(물음표)를 기점으로 우측이 queryStream
 
 public class Rq {
     String url;
+    String path;
+    String queryStr;
 
     public Rq(String url) {
         this.url = url;
+        String[] urlBits = url.split("\\?", 2);
+        this.path = urlBits[0];
+
+        if (urlBits.length == 2) {
+            this.queryStr = urlBits[1];
+        }
     }
 
     public int getIntParam(String paramName, int defaultValue) {
-        String[] urlBits = url.split("\\?", 2);
-
-        if (urlBits.length == 1) {
+        if (queryStr == null) {
             return defaultValue;
         }
 
-        urlBits = urlBits[1].split("&");
+        String[] bits = queryStr.split("&");
 
-        for (String urlBit : urlBits) {
+        for (String urlBit : bits) {
             String[] paramNameAndValue = urlBit.split("=", 2);
             String paramName_ = paramNameAndValue[0];
             String paramValue = paramNameAndValue[1];
@@ -30,9 +37,7 @@ public class Rq {
         return defaultValue;
     }
 
-    public String getPath() { //실패할 경우
-        String[] urlBits = url.split("\\?", 2);
-
-        return urlBits[0];
+    public String getPath() {
+        return path;
     }
 }
